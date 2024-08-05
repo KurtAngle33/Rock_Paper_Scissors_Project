@@ -9,8 +9,6 @@ function getComputerChoice() {
 return  randomChoices;
 }
 
-console.log(getComputerChoice());
-
 // function for human's choice
 
 function getHumanChoice() {
@@ -28,22 +26,39 @@ function getHumanChoice() {
         console.log(choice);
         break;
         default:
-            console.log ("not a valid answer");
+            alert("not a valid answer");
     }
     return choice;
     }
 
+// computer's choice displayed
+
+console.log(getComputerChoice());
 
 // function to play a round, using both choices
 
 function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie!");
+    } else if (humanChoice === "rock" && computerChoice ==="paper") {
+        console.log("Paper beats rock, you lose!");
+    } else if (humanChoice === "rock" && computerChoice ==="scissors") {
+        console.log("Rock beats scissors, you win!");
+    } else if (humanChoice === "paper" && computerChoice ==="rock") {
+        console.log("Paper beats rock, you win!");
+    } else if (humanChoice === "paper" && computerChoice ==="scissors") {
+        console.log("Scissors beats paper, you lose!");
+    } else if (humanChoice === "scissors" && computerChoice ==="rock") {
+        console.log("Rock beats scissors, you lose!");
+    } else if (humanChoice === "scissors" && computerChoice ==="paper") {
+        console.log("Scissors beats paper, you win!");
+    } else {
+        console.log("try again");
+    }
 }
 const humanSelection = getHumanChoice();
-console.log(humanSelection)
 const computerSelection = getComputerChoice();
-console.log(computerSelection)
 
-playRound(humanSelection, computerSelection);
+playRound(humanSelection.toLowerCase(), computerSelection);
 
 // run 5 total rounds 
-
