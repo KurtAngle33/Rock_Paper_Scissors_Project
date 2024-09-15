@@ -1,38 +1,14 @@
-// global variables for scores
+
 let humanScore = 0;
 let computerScore = 0;
 const choices = ["rock", "paper", "scissors"];
 
-// function for computer's choice
 function getComputerChoice() {
 let randomChoices = choices[Math.floor(Math.random() * choices.length)];
 return  randomChoices;
 }
 
-// function for human's choice
-
-/* function getHumanChoice() {
-    let choice = "";
-
-    choice = prompt("Rock, Paper, or Scissors?");
-    switch (choice.toLowerCase()) {
-        case "rock":
-        console.log(choice);
-        break;
-        case "paper":
-        console.log(choice);
-        break;
-        case "scissors":
-        console.log(choice);
-        break;
-        default:
-            alert("not a valid answer");
-    }
-    return choice;
-    } */
-
-
-    function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice, computerChoice) {
         computerChoice = getComputerChoice();
         if (humanChoice === computerChoice) {
             document.getElementById("result").textContent = "It's a tie!";
@@ -88,6 +64,3 @@ const scissorsBtn = document.querySelector("#scissors");
 scissorsBtn.addEventListener("click", () => {
     playRound("scissors");
 });
-
-
-// document.getElementById("scores").innerHTML = "";
